@@ -13,6 +13,7 @@ using System.Text;
 
 namespace JWTToken.Controllers
 {
+    //[ApiController]
     [Route("[controller]")]
     public class JWTTokenController : ControllerBase
     {
@@ -33,6 +34,7 @@ namespace JWTToken.Controllers
         [HttpGet]
         public IActionResult Test()
         {
+            _logger.LogInformation("Opened Hello Page");
             return Ok("Hello");
         }
 
@@ -48,9 +50,11 @@ namespace JWTToken.Controllers
         //public IActionResult Token([FromForm]LoginUser user)
         public IActionResult Token(string username, string password)
         {
+            _logger.LogInformation("Generating Token for User " + username);
             var identity = GetIdentity(username, password);
             if (identity == null)
             {
+                _logger.LogInformation("Can't Find User" +username);
                 return BadRequest(new { errorText = "Invalid username or password." });
             }
             //now time to create expire
@@ -68,7 +72,7 @@ namespace JWTToken.Controllers
             {
                 access_token = encodedJwt
             };
-
+            _logger.LogInformation("Generated Token for " + username + " "+ DateTime.UtcNow);
             return Ok(response);
         }
 
