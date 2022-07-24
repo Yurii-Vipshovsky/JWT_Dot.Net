@@ -13,7 +13,6 @@ using System.Text;
 
 namespace JWTToken.Controllers
 {
-    [ApiController]
     [Route("[controller]")]
     public class JWTTokenController : ControllerBase
     {
@@ -37,9 +36,16 @@ namespace JWTToken.Controllers
             return Ok("Hello");
         }
 
-        //work with params
-        //change to body
+        //uncomment if use apiController
+
+        //public class LoginUser
+        //{
+        //    public string username { get; set; }
+        //    public string password { get; set; }
+        //}
+
         [HttpPost("/auth")]
+        //public IActionResult Token([FromForm]LoginUser user)
         public IActionResult Token(string username, string password)
         {
             var identity = GetIdentity(username, password);
