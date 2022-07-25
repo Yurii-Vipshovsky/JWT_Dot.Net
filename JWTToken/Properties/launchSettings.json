@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "JWTToken",
+      "launchUrl": "api/JWTToken",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

@@ -18,7 +18,7 @@ namespace JWTUnitTest
         [TestMethod]
         public void TestFibonacciCalculator()
         {
-            CollectionAssert.AreEqual(new List<int>() { 0,1,1,2 },
+            CollectionAssert.AreEqual(new List<int>() { 0, 1, 1, 2 },
             FibonacciCalculator.CalculateFibonacci(4));
             CollectionAssert.AreEqual(new List<int>() { 0, 1, 1, 2, 3, 5 },
             FibonacciCalculator.CalculateFibonacci(6));

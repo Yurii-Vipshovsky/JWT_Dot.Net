@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JWTToken", "JWTToken.csproj", "{5C530D66-772C-4FB1-80C3-53DEFA6032F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTToken", "JWTToken.csproj", "{5C530D66-772C-4FB1-80C3-53DEFA6032F9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JWTUnitTest", "..\JWTUnitTest\JWTUnitTest.csproj", "{B14CFDA2-8A35-4F5B-B221-8824CD44BD4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5C530D66-772C-4FB1-80C3-53DEFA6032F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C530D66-772C-4FB1-80C3-53DEFA6032F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C530D66-772C-4FB1-80C3-53DEFA6032F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B14CFDA2-8A35-4F5B-B221-8824CD44BD4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B14CFDA2-8A35-4F5B-B221-8824CD44BD4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B14CFDA2-8A35-4F5B-B221-8824CD44BD4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B14CFDA2-8A35-4F5B-B221-8824CD44BD4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
