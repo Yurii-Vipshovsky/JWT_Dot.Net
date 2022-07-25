@@ -1,16 +1,10 @@
-﻿using JWTToken.Services;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.AspNetCore.TestHost;
 using Microsoft.AspNetCore.Hosting;
 using System.Net.Http;
 using JWTToken;
-using System.Net;
 using JWTToken.Controllers;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
-using System.Web.Http.Results;
-using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -78,6 +72,7 @@ namespace JWTUnitTest
 
             IActionResult actionResult = controller.Token("test1@gmail.com", "12341");
             var resValue = actionResult as BadRequestObjectResult;
+
             // Assert
             Assert.IsInstanceOfType(actionResult, typeof(BadRequestObjectResult));
             Assert.AreEqual(resValue.Value.ToString(), "Invalid username or password.");
@@ -96,6 +91,7 @@ namespace JWTUnitTest
 
             var actionResult = controller.Token("asffewgf", "12345");
             var resValue = actionResult as BadRequestObjectResult;
+
             // Assert
             Assert.IsInstanceOfType(actionResult, typeof(BadRequestObjectResult));
             Assert.AreEqual(resValue.Value.ToString(), "Invalid username or password.");

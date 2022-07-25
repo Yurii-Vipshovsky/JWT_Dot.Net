@@ -11,13 +11,16 @@ using System.Text;
 
 namespace JWTToken.Controllers
 {
+    /// <summary>
+    /// Controller for creating Tokens
+    /// </summary>
     [Route("api/[controller]")]
     public class JWTTokenController : ControllerBase
     {
         private List<User> users = new List<User>
         {
-            new User {Login="test1@gmail.com", Password="12345", Role="user" },
-            new User {Login="test2@gmail.com", Password="12345", Role="user" }
+            new User {Login="test1@gmail.com", Password="12345"},
+            new User {Login="test2@gmail.com", Password="12345"}
         };
 
         private readonly ILogger<JWTTokenController> _logger;
@@ -71,12 +74,10 @@ namespace JWTToken.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login),
-                    new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role)
+                    new Claim(ClaimsIdentity.DefaultNameClaimType, user.Login)
                 };
                 ClaimsIdentity claimsIdentity =
-                new ClaimsIdentity(claims, "Token", ClaimsIdentity.DefaultNameClaimType,
-                    ClaimsIdentity.DefaultRoleClaimType);
+                new ClaimsIdentity(claims, "Token");
                 return claimsIdentity;
             }
             return null;
