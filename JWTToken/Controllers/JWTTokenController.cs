@@ -17,6 +17,9 @@ namespace JWTToken.Controllers
     [Route("api/[controller]")]
     public class JWTTokenController : ControllerBase
     {
+        /// <summary>
+        /// List of users insted of DB
+        /// </summary>
         private List<User> users = new List<User>
         {
             new User {Login="test1@gmail.com", Password="12345"},
@@ -29,6 +32,10 @@ namespace JWTToken.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Start Page
+        /// </summary>
+        /// <returns>String "Hello"</returns>
         [HttpGet]
         public IActionResult Test()
         {
@@ -36,6 +43,12 @@ namespace JWTToken.Controllers
             return Ok("Hello");
         }
 
+        /// <summary>
+        /// Creates Token for user
+        /// </summary>
+        /// <param name="username">User Login</param>
+        /// <param name="password">User Password</param>
+        /// <returns>String access_token</returns>
         [HttpPost("/api/auth")]
         public IActionResult Token(string username, string password)
         {
@@ -67,6 +80,12 @@ namespace JWTToken.Controllers
             return Ok(response);
         }
 
+        /// <summary>
+        /// Search for user in DB
+        /// </summary>
+        /// <param name="username">User Login</param>
+        /// <param name="password">User Password</param>
+        /// <returns>User identity or null if user doesn't exist</returns>
         private ClaimsIdentity GetIdentity(string username, string password)
         {
             User user = users.FirstOrDefault(x => x.Login == username && x.Password == password);

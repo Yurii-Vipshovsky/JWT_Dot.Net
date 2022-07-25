@@ -7,6 +7,9 @@ using System.Collections.Generic;
 
 namespace JWTToken.Controllers
 {
+    /// <summary>
+    /// Controller for calculating Fibonacci numbers
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class FibonacciController : Controller
@@ -17,6 +20,11 @@ namespace JWTToken.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// If user Authorized method calculate {length} of Fibonacci numbers
+        /// </summary>
+        /// <param name="length">Numbers of calculated Fibonacci numbers</param>
+        /// <returns>List of calculated numbers</returns>
         [Authorize]
         [HttpGet("{length}")]
         public IActionResult Index(int length)
